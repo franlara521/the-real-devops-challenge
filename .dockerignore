@@ -1,0 +1,10 @@
+assets
+data
+tests
+.gitignore
+.travis.yml
+Dockerfile
+LICENSE
+README.md
+requirements_dev.txt
+tox.ini
