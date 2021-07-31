@@ -1,0 +1,20 @@
+version: '3'
+services:
+  database:
+    image: database
+    container_name: database
+    build: data/.
+    ports:
+      - 27017:27017
+  apirestaurant:
+    image: apirestaurant
+    container_name: apirestaurant
+    build: .
+    depends_on:
+      - database
+    links:
+      - database
+    ports: 
+      - 8080:8080
+    environment:
+      - MONGO_URI=mongodb://database:27017/fran_challenge
